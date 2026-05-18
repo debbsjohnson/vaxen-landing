@@ -1,58 +1,39 @@
+import Image from 'next/image';
+
 function DocumentCoins() {
   return (
-    <div className="relative mx-auto h-64 w-72">
-      <div className="absolute bottom-8 left-4 h-20 w-56 -skew-x-12 rounded-[1rem] bg-[#89a8ff]" />
-      <div className="absolute bottom-14 left-8 h-20 w-56 -skew-x-12 rounded-[1rem] bg-[#e9f1ff]" />
-      <div className="absolute left-24 top-6 h-36 w-24 -skew-y-12 rounded-xl bg-[#3e37f2] shadow-xl">
-        <div className="absolute left-6 top-16 h-3 w-16 rounded-full bg-white" />
-        <div className="absolute left-7 top-20 h-3 w-16 rounded-full bg-white" />
-      </div>
-      <div className="absolute bottom-20 right-10 flex gap-2">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f3ca4d] text-2xl font-black text-white shadow-md">
-          $
-        </span>
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f3ca4d] text-2xl font-black text-white shadow-md">
-          ¥
-        </span>
-      </div>
-    </div>
+    <Image
+      src="/assets/curr_vol.jpeg"
+      alt="Currency volatility visualization"
+      width={288}
+      height={256}
+      className="mx-auto rounded-lg object-contain"
+    />
   );
 }
 
 function BankCoin() {
   return (
-    <div className="relative mx-auto h-52 w-72">
-      <div className="absolute bottom-6 left-10 h-24 w-56 -skew-x-12 rounded-xl bg-[#87a8ff]" />
-      <div className="absolute bottom-12 left-14 h-24 w-56 -skew-x-12 rounded-xl bg-[#e9f0ff]" />
-      <div className="absolute bottom-28 left-28 h-24 w-28 rounded-t-xl bg-[#c6282f] text-center text-sm font-black text-white shadow-lg">
-        <div className="pt-2">BANK</div>
-        <div className="mx-auto mt-3 flex w-20 justify-between">
-          <span className="h-11 w-3 bg-white" />
-          <span className="h-11 w-3 bg-white" />
-          <span className="h-11 w-3 bg-white" />
-        </div>
-      </div>
-      <span className="absolute bottom-20 right-20 flex h-16 w-16 items-center justify-center rounded-full bg-[#f3ca4d] text-3xl font-black text-white shadow-md">
-        ¥
-      </span>
-    </div>
+    <Image
+      src="/assets/delays_driven.jpeg"
+      alt="Banking delays visualization"
+      width={288}
+      height={208}
+      className="mx-auto rounded-lg object-contain"
+    />
   );
 }
 
 function Chip() {
   return (
-    <div className="relative mx-auto h-44 w-44">
-      <div className="absolute inset-0 m-auto h-24 w-24 bg-[#bfe1ff]" />
-      <div className="absolute inset-0 m-auto h-20 w-20 bg-[#5cb4df]" />
-      <div className="absolute inset-0 m-auto h-12 w-12 bg-[#16556f]" />
-      {Array.from({ length: 6 }).map((_, i) => (
-        <span
-          key={i}
-          className="absolute left-1/2 top-1/2 h-2 w-36 -translate-x-1/2 -translate-y-1/2 bg-[#cfe8ff]"
-          style={{ transform: `translate(-50%, -50%) rotate(${i * 30}deg)` }}
-        />
-      ))}
-      <span className="absolute inset-0 m-auto h-4 w-4 bg-white" />
+    <div className="mx-auto rounded-lg p-4">
+      <Image
+        src="/assets/op_comp2.jpeg"
+        alt="Operational complexity visualization"
+        width={176}
+        height={176}
+        className="mx-auto rounded-lg object-contain"
+      />
     </div>
   );
 }
