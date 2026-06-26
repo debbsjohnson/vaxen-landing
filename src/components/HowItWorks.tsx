@@ -1,30 +1,36 @@
 const steps = [
   {
     number: "1",
+    icon: "/assets/icon-banking.svg",
     title: "Treasury Structuring",
     body: "We configure a multi-currency treasury environment aligned to your cross-border transaction profile.",
     className: "left-0 top-[1.25rem]",
   },
   {
     number: "2",
+    icon: "/assets/icon-coin.svg",
     title: "Balance Consolidation",
     body: "Maintain controlled exposure across USD, GBP, EUR, and BRL within a unified structure.",
     className: "left-[26rem] top-[9.5rem]",
   },
   {
     number: "3",
+    icon: "/assets/icon-transfer.svg",
     title: "Precision Conversion & Settlement",
     body: "Execute high-value currency conversion and settlement with attention to timing, liquidity, and execution quality.",
     className: "left-0 top-[20.5rem]",
   },
   {
     number: "4",
+    icon: "/assets/icon-money.svg",
     title: "Capital Deployment",
     body: "Transfer funds for acquisitions, capital allocation, or operational requirements with structured oversight and transparency.",
     extra: "All activity operates within a controlled, auditable framework designed for capital-intensive organisations.",
     className: "left-[26rem] top-[33rem]",
   },
 ];
+
+import Image from "next/image";
 
 export default function HowItWorks() {
   return (
@@ -37,7 +43,38 @@ export default function HowItWorks() {
           How It Works
         </h2>
 
-        <div className="relative left-1/2 mt-20 h-[51rem] w-[47rem] max-w-[calc(100vw-3rem)] -translate-x-1/2 origin-top scale-[min(1,calc((100vw-3rem)/47rem))] bg-[radial-gradient(circle_at_46%_36%,rgba(44,116,255,0.13),transparent_34%),radial-gradient(circle_at_55%_60%,rgba(215,36,57,0.13),transparent_42%)]">
+        {/* Mobile: simple vertical stack */}
+        <div className="md:hidden mt-10 flex flex-col gap-5">
+          {steps.map((step) => (
+            <article
+              key={step.number}
+              className="soft-card rounded-[1rem] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.055)]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-black/[0.05]">
+                  <Image src={step.icon} alt="" width={28} height={28} className="object-contain" />
+                </div>
+                <div className="pt-0.5">
+                  <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-black/30 mb-1">Step {step.number}</p>
+                  <h3 className="text-[1.05rem] font-bold leading-tight text-black">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] font-medium leading-[1.6] text-black/80">
+                    {step.body}
+                  </p>
+                  {step.extra ? (
+                    <p className="mt-3 text-[0.95rem] font-medium leading-[1.6] text-black/80">
+                      {step.extra}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Desktop: staggered layout */}
+        <div className="hidden md:block relative left-1/2 mt-20 h-[51rem] w-[47rem] max-w-[calc(100vw-3rem)] -translate-x-1/2 origin-top scale-[min(1,calc((100vw-3rem)/47rem))] bg-[radial-gradient(circle_at_46%_36%,rgba(44,116,255,0.13),transparent_34%),radial-gradient(circle_at_55%_60%,rgba(215,36,57,0.13),transparent_42%)]">
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full"
             viewBox="0 0 752 816"
@@ -65,20 +102,22 @@ export default function HowItWorks() {
               <article
                 key={step.number}
                 className={`soft-card absolute w-[20rem] rounded-[1rem] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.055)] ${step.className}`}
+                style={{ background: "white" }}
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/10 bg-white/55 text-[1rem] font-bold text-black shadow-sm">
-                    {step.number}
+                  <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-black/[0.05]">
+                    <Image src={step.icon} alt="" width={32} height={32} className="object-contain" />
                   </div>
                   <div className="pt-0.5">
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.15em] text-black/30 mb-1">Step {step.number}</p>
                     <h3 className="text-[1.14rem] font-bold leading-tight text-black">
                       {step.title}
                     </h3>
-                    <p className="mt-5 text-[0.82rem] font-medium leading-[1.55] text-black/85">
+                    <p className="mt-4 text-[0.95rem] font-medium leading-[1.6] text-black/80">
                       {step.body}
                     </p>
                     {step.extra ? (
-                      <p className="mt-5 text-[0.82rem] font-medium leading-[1.55] text-black/85">
+                      <p className="mt-4 text-[0.95rem] font-medium leading-[1.6] text-black/80">
                         {step.extra}
                       </p>
                     ) : null}

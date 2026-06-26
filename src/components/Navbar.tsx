@@ -9,7 +9,7 @@ const links = [
   { label: "Approach", href: "#approach" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "FAQ", href: "#faq" },
-  { label: "Closing", href: "#closing" },
+  { label: "Apply", href: "#closing" },
 ];
 
 export default function Navbar() {
@@ -42,12 +42,12 @@ export default function Navbar() {
           />
         </a>
 
-        <div className="hidden md:flex items-center gap-[clamp(2rem,4.5vw,7rem)] absolute left-1/2 -translate-x-1/2">
+        <div className="hidden md:flex items-center gap-[clamp(1.5rem,3.5vw,5rem)] absolute left-1/2 -translate-x-1/2">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className={`text-[1rem] lg:text-[1.15rem] transition-colors duration-200 font-semibold whitespace-nowrap ${
+              className={`text-[0.95rem] lg:text-[1rem] transition-colors duration-200 font-semibold whitespace-nowrap ${
                 scrolled ? "text-black/72 hover:text-black" : "text-white/90 hover:text-white"
               }`}
             >
@@ -55,6 +55,17 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+
+        <a
+          href="mailto:access@vaxenglobal.com"
+          className={`hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-[0.85rem] font-bold transition-all duration-200 whitespace-nowrap ${
+            scrolled
+              ? "bg-black text-white hover:bg-black/80"
+              : "bg-white/15 border border-white/40 text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Request Access
+        </a>
 
         <button
           className={`md:hidden ${scrolled ? "text-black/70 hover:text-black" : "text-white/80 hover:text-white"}`}
@@ -84,6 +95,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <a
+            href="mailto:access@vaxenglobal.com"
+            onClick={() => setMenuOpen(false)}
+            className="mt-2 inline-flex items-center justify-center rounded-full bg-black px-5 py-3 text-sm font-bold text-white hover:bg-black/80 transition-colors"
+          >
+            Request Access
+          </a>
         </div>
       )}
     </nav>

@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
+import TrustBar from "@/components/TrustBar";
 import BuiltFor from "@/components/BuiltFor";
 import Problem from "@/components/Problem";
 import Approach from "@/components/Approach";
@@ -16,6 +18,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
+        <StatsBar />
         <BuiltFor />
         <Problem />
         <Approach />

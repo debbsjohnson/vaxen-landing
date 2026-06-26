@@ -1,36 +1,44 @@
-import Image from "next/image";
-
 export default function Closing() {
   return (
-    <section id="closing" className="relative min-h-[45rem] overflow-hidden bg-[#120313]">
-      <Image
-        src="/assets/Pattern 12.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#090016]/25 via-[#260018]/10 to-[#b7152d]/25" />
+    <section id="closing" className="relative overflow-hidden bg-[#06060B] py-32 lg:py-44">
+      {/* Brand gradient glows */}
+      <div className="pointer-events-none absolute left-[8%] top-[15%] h-[32rem] w-[32rem] rounded-full bg-[#2974ff]/[0.08] blur-[90px]" />
+      <div className="pointer-events-none absolute bottom-[10%] right-[8%] h-[28rem] w-[28rem] rounded-full bg-[#e3233f]/[0.09] blur-[80px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[20rem] w-[60rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7456c7]/[0.05] blur-[100px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[45rem] max-w-[1560px] items-center px-6 py-28 lg:justify-end lg:px-10">
-        <div className="w-full max-w-[980px] text-center text-white lg:pr-16">
-          <h2 className="text-[clamp(3.1rem,4vw,4.6rem)] font-bold leading-none lg:text-right">
-            Closing
-          </h2>
-          <p className="mt-8 text-[clamp(1.7rem,2.35vw,2.35rem)] font-bold leading-tight">
-            Strategic capital requires structured execution.
-          </p>
-          <p className="mx-auto mt-8 max-w-[760px] text-[clamp(1rem,1.15vw,1.2rem)] font-medium leading-[1.85] text-white/88 lg:mr-0">
-            Vaxen Global provides the control, clarity, and precision required
-            for cross-border treasury and settlement operations.
-          </p>
+      <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center lg:px-10">
+        <p className="mb-6 text-[0.7rem] font-bold uppercase tracking-[0.24em] text-white/30">
+          Apply
+        </p>
 
-          <a
-            href="mailto:access@vaxenglobal.com"
-            className="mt-12 inline-flex min-w-[13.5rem] items-center justify-center rounded-full border border-white/75 px-10 py-4 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#06060B] lg:ml-auto"
-          >
-            Request Access
-          </a>
+        <h2 className="text-[clamp(2.2rem,3.5vw,4rem)] font-bold leading-tight text-white">
+          Strategic capital requires
+          <br />
+          structured execution.
+        </h2>
+
+        <p className="mx-auto mt-7 max-w-[580px] text-[1.05rem] font-medium leading-[1.75] text-white/50">
+          Apply for institutional access. Our team reviews each application
+          individually and prioritises operators with significant cross-border
+          transaction volume.
+        </p>
+
+        <a
+          href="mailto:access@vaxenglobal.com"
+          className="mt-12 inline-flex min-w-[14rem] items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-10 py-4 text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-white hover:text-[#06060B]"
+        >
+          Request Access
+        </a>
+
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {["4 Supported Currencies", "Application-Based Access", "Institutional Operators Only", "Auditable Framework"].map((item) => (
+            <div key={item} className="flex items-center gap-2">
+              <div className="h-1 w-1 rounded-full bg-white/25" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-wider text-white/30">
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
