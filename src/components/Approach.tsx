@@ -36,7 +36,13 @@ const capabilities = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="page-shell large-section">
+    <section id="approach" className="page-shell large-section relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute right-0 top-0 h-[620px] w-[620px] translate-x-1/3 -translate-y-1/4 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(227,35,63,0.08) 0%, transparent 60%)" }} />
+        <div className="absolute bottom-0 left-0 h-[580px] w-[580px] -translate-x-1/3 translate-y-1/4 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(116,86,199,0.08) 0%, transparent 60%)" }} />
+      </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
         {/* Header */}
         <div className="text-center">

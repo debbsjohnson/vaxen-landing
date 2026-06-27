@@ -107,7 +107,13 @@ function ProviderDiagram() {
 
 export default function Problem() {
   return (
-    <section id="problem" className="page-shell large-section">
+    <section id="problem" className="page-shell large-section relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-0 top-0 h-[700px] w-[700px] -translate-x-1/4 -translate-y-1/4 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(41,116,255,0.09) 0%, transparent 60%)" }} />
+        <div className="absolute bottom-0 right-0 h-[650px] w-[650px] translate-x-1/4 translate-y-1/4 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(116,86,199,0.09) 0%, transparent 60%)" }} />
+      </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
         <div className="mx-auto mb-28 max-w-[760px] text-center">
           <h2 className="section-title text-black">The Problem</h2>

@@ -33,7 +33,13 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="page-shell large-section">
+    <section id="faq" className="page-shell large-section relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-0 top-1/4 h-[550px] w-[550px] -translate-x-1/3 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(41,116,255,0.09) 0%, transparent 60%)" }} />
+        <div className="absolute bottom-1/4 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(227,35,63,0.07) 0%, transparent 60%)" }} />
+      </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
         <div className="mb-14 text-center">
           <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-black/35">

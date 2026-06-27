@@ -29,7 +29,13 @@ const capabilities = [
 
 export default function BuiltFor() {
   return (
-    <section id="about" className="page-shell large-section">
+    <section id="about" className="page-shell large-section relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-0 top-1/2 h-[700px] w-[700px] -translate-x-1/3 -translate-y-1/2 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(41,116,255,0.10) 0%, transparent 60%)" }} />
+        <div className="absolute right-0 top-1/3 h-[580px] w-[580px] translate-x-1/3 rounded-full"
+             style={{ background: "radial-gradient(circle, rgba(227,35,63,0.08) 0%, transparent 60%)" }} />
+      </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
         <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="lg:pl-2">
