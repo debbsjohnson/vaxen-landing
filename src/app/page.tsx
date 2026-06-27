@@ -7,6 +7,7 @@ import Problem from "@/components/Problem";
 import Approach from "@/components/Approach";
 import HowItWorks from "@/components/HowItWorks";
 import WhoWeServe from "@/components/WhoWeServe";
+import PlatformPreview from "@/components/PlatformPreview";
 import Currencies from "@/components/Currencies";
 import FAQ from "@/components/FAQ";
 import Closing from "@/components/Closing";
@@ -25,6 +26,7 @@ export default function Home() {
         <Approach />
         <HowItWorks />
         <WhoWeServe />
+        <PlatformPreview />
         <Currencies />
         <FAQ />
         <Closing />

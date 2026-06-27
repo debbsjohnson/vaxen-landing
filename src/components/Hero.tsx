@@ -16,6 +16,17 @@ const EDGES = [
   { from: "GBP", to: "BRL", dur: "4.1s", begin: "3.1s" },
 ];
 
+const TICKER_ITEMS = [
+  { from: "USD", fromCol: "#3b82f6", to: "GBP", toCol: "#8b5cf6", amount: "$2,450,000", status: "Settled" },
+  { from: "EUR", fromCol: "#06b6d4", to: "BRL", toCol: "#10b981", amount: "€3,100,000", status: "Settled" },
+  { from: "GBP", fromCol: "#8b5cf6", to: "EUR", toCol: "#06b6d4", amount: "£1,890,000", status: "Processing" },
+  { from: "USD", fromCol: "#3b82f6", to: "EUR", toCol: "#06b6d4", amount: "$5,200,000", status: "Settled" },
+  { from: "BRL", fromCol: "#10b981", to: "USD", toCol: "#3b82f6", amount: "R$12.4M",    status: "Settled" },
+  { from: "GBP", fromCol: "#8b5cf6", to: "BRL", toCol: "#10b981", amount: "£2,750,000", status: "Processing" },
+  { from: "USD", fromCol: "#3b82f6", to: "BRL", toCol: "#10b981", amount: "$8,100,000", status: "Settled" },
+  { from: "EUR", fromCol: "#06b6d4", to: "GBP", toCol: "#8b5cf6", amount: "€1,640,000", status: "Settled" },
+];
+
 function CorridorMap() {
   return (
     <svg
@@ -33,18 +44,12 @@ function CorridorMap() {
         ))}
       </defs>
 
-      {/* Edges */}
       {EDGES.map((edge, i) => {
         const f = NODE_MAP.get(edge.from)!;
         const t = NODE_MAP.get(edge.to)!;
         return (
           <g key={i}>
-            <line
-              x1={f.x} y1={f.y}
-              x2={t.x} y2={t.y}
-              stroke="rgba(255,255,255,0.11)"
-              strokeWidth="1"
-            />
+            <line x1={f.x} y1={f.y} x2={t.x} y2={t.y} stroke="rgba(255,255,255,0.11)" strokeWidth="1" />
             <circle r="3.5" fill={f.color} opacity="0.9">
               <animateMotion
                 path={`M ${f.x},${f.y} L ${t.x},${t.y}`}
@@ -57,45 +62,15 @@ function CorridorMap() {
         );
       })}
 
-      {/* Nodes */}
       {NODES.map((n) => (
         <g key={n.id}>
-          {/* Outer glow */}
           <circle cx={n.x} cy={n.y} r="52" fill={`url(#grd-${n.id})`} />
-          {/* Mid ring */}
           <circle cx={n.x} cy={n.y} r="28" fill={n.color} opacity="0.13" />
-          {/* Inner ring */}
           <circle cx={n.x} cy={n.y} r="19" fill={n.color} opacity="0.22" />
-          {/* Core */}
           <circle cx={n.x} cy={n.y} r="12" fill={n.color} opacity="0.95" />
-          {/* Centre dot */}
-          <circle cx={n.x} cy={n.y} r="4" fill="white" opacity="0.9" />
-          {/* Currency code */}
-          <text
-            x={n.x}
-            y={n.y + 36}
-            textAnchor="middle"
-            fill="white"
-            fontSize="11"
-            fontWeight="700"
-            letterSpacing="2"
-            opacity="0.85"
-            style={{ fontFamily: "var(--font-orbitron)" }}
-          >
-            {n.label}
-          </text>
-          {/* Region */}
-          <text
-            x={n.x}
-            y={n.y + 50}
-            textAnchor="middle"
-            fill="white"
-            fontSize="7.5"
-            fontWeight="500"
-            opacity="0.35"
-          >
-            {n.region}
-          </text>
+          <circle cx={n.x} cy={n.y} r="4"  fill="white"   opacity="0.9" />
+          <text x={n.x} y={n.y + 36} textAnchor="middle" fill="white" fontSize="11" fontWeight="700" letterSpacing="2" opacity="0.85" style={{ fontFamily: "var(--font-orbitron)" }}>{n.label}</text>
+          <text x={n.x} y={n.y + 50} textAnchor="middle" fill="white" fontSize="7.5" fontWeight="500" opacity="0.35">{n.region}</text>
         </g>
       ))}
     </svg>
@@ -104,80 +79,123 @@ function CorridorMap() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#06060B]">
+    <section className="relative overflow-hidden bg-[#06060B]">
       {/* Atmosphere */}
       <div className="pointer-events-none absolute -left-40 -top-40 h-[56rem] w-[56rem] rounded-full bg-[#2974ff]/[0.065] blur-[130px]" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-[42rem] w-[42rem] translate-x-1/3 rounded-full bg-[#7456c7]/[0.055] blur-[110px]" />
       <div className="pointer-events-none absolute bottom-0 left-1/3 h-[28rem] w-[28rem] rounded-full bg-[#e3233f]/[0.04] blur-[90px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1560px] items-center px-6 pb-16 pt-28 lg:px-10 lg:pt-36">
-        <div className="grid w-full gap-14 lg:grid-cols-2 lg:items-center lg:gap-8">
-          {/* ── Left: content ── */}
-          <div>
-            <p className="mb-5 text-[0.72rem] font-bold uppercase tracking-[0.22em] text-white/38">
-              Institutional Treasury Infrastructure
-            </p>
+      {/* Main content */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1560px] flex-col px-6 pt-28 lg:px-10 lg:pt-36">
+        <div className="flex flex-1 items-center pb-20">
+          <div className="grid w-full gap-14 lg:grid-cols-2 lg:items-center lg:gap-8">
 
-            <h1
-              className="font-black uppercase leading-none text-white"
-              style={{
-                fontFamily: "var(--font-orbitron)",
-                fontSize: "clamp(2.4rem, 8vw, 6.2rem)",
-              }}
-            >
-              Vaxen Global
-            </h1>
+            {/* ── Left: content ── */}
+            <div>
+              {/* Brand accent */}
+              <div className="mb-6 flex items-center gap-3">
+                <span
+                  className="font-black uppercase tracking-[0.14em] text-white/40"
+                  style={{ fontFamily: "var(--font-orbitron)", fontSize: "0.82rem" }}
+                >
+                  VAXEN GLOBAL
+                </span>
+                <span className="h-px w-6 bg-white/20" />
+                <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-white/25">
+                  Treasury Infrastructure
+                </span>
+              </div>
 
-            <p className="mt-6 max-w-[560px] text-[1.15rem] font-bold leading-snug text-white lg:text-[1.3rem]">
-              Private infrastructure for cross-border capital at institutional scale.
-            </p>
-
-            <p className="mt-5 max-w-[480px] text-[0.95rem] font-medium leading-relaxed text-white/55 lg:text-[1rem]">
-              Designed for institutional operators managing significant cross-border
-              transaction volume across USD, GBP, EUR, and BRL.
-            </p>
-
-            {/* CTAs */}
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="mailto:access@vaxenglobal.com"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[0.9rem] font-bold text-[#06060B] shadow-lg transition-all duration-200 hover:bg-white/90"
+              {/* Primary statement — the hero */}
+              <h1
+                className="font-bold leading-[1.06] tracking-[-0.02em] text-white"
+                style={{ fontSize: "clamp(2.8rem, 5vw, 5.4rem)" }}
               >
-                Apply for Access
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center gap-2 text-[0.85rem] font-semibold text-white/60 transition-colors hover:text-white"
-              >
-                Learn more
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
+                Cross-border
+                <br />
+                capital
+                <br />
+                <span className="text-white/50">infrastructure.</span>
+              </h1>
+
+              <p className="mt-8 max-w-[480px] text-[1rem] font-medium leading-[1.75] text-white/50">
+                Structured for institutional operators managing significant
+                cross-border transaction volume across USD, GBP, EUR, and BRL.
+              </p>
+
+              {/* CTAs */}
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="mailto:access@vaxenglobal.com"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[0.88rem] font-bold text-[#06060B] shadow-lg transition-all duration-200 hover:bg-white/90"
+                >
+                  Apply for Access
+                </a>
+                <a
+                  href="#about"
+                  className="inline-flex items-center gap-2 text-[0.84rem] font-semibold text-white/45 transition-colors hover:text-white/70"
+                >
+                  Learn more
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Trust strip */}
+              <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2">
+                {["4 Supported Currencies", "Institutional Operators Only", "Application-Based Access", "Auditable Framework"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="h-1 w-1 rounded-full bg-white/30" />
+                    <span className="text-[0.7rem] font-semibold uppercase tracking-wider text-white/35">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Trust strip */}
-            <div className="mt-12 flex flex-wrap gap-x-7 gap-y-2.5">
-              {[
-                "4 Supported Currencies",
-                "Institutional Operators Only",
-                "Application-Based Access",
-                "Auditable Framework",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <div className="h-1 w-1 rounded-full bg-white/35" />
-                  <span className="text-[0.73rem] font-semibold uppercase tracking-wider text-white/45">
-                    {item}
-                  </span>
-                </div>
-              ))}
+            {/* ── Right: corridor map ── */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <CorridorMap />
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* ── Right: corridor map ── */}
-          <div className="flex items-center justify-center lg:justify-end">
-            <CorridorMap />
-          </div>
+      {/* ── Transaction ticker ── */}
+      <div className="relative z-10 overflow-hidden border-t border-white/[0.06] bg-white/[0.018] py-3">
+        <div
+          className="flex items-center whitespace-nowrap"
+          style={{ animation: "vaxen-marquee 36s linear infinite" }}
+        >
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((t, i) => (
+            <span key={i} className="mx-7 inline-flex items-center gap-3">
+              {/* Currency pair */}
+              <span className="inline-flex items-center gap-1.5">
+                <span className="text-[0.72rem] font-bold" style={{ color: t.fromCol }}>{t.from}</span>
+                <span className="text-white/20 text-[0.7rem]">→</span>
+                <span className="text-[0.72rem] font-bold" style={{ color: t.toCol }}>{t.to}</span>
+              </span>
+              {/* Amount */}
+              <span
+                className="text-[0.78rem] font-bold text-white"
+                style={{ fontFamily: "var(--font-orbitron)" }}
+              >
+                {t.amount}
+              </span>
+              {/* Status badge */}
+              <span
+                className={`rounded-full px-2 py-0.5 text-[0.58rem] font-bold uppercase tracking-wider ${
+                  t.status === "Settled"
+                    ? "bg-emerald-500/15 text-emerald-400"
+                    : "bg-amber-500/15 text-amber-400"
+                }`}
+              >
+                {t.status}
+              </span>
+              {/* Separator */}
+              <span className="ml-4 h-3 w-px bg-white/10" />
+            </span>
+          ))}
         </div>
       </div>
     </section>
