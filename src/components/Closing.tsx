@@ -1,6 +1,6 @@
 export default function Closing() {
   return (
-    <section id="closing" className="relative overflow-hidden bg-[#06060B] py-32 lg:py-44">
+    <section id="closing" className="relative overflow-hidden bg-[#06091C] py-32 lg:py-44">
       {/* Brand gradient glows */}
       <div className="pointer-events-none absolute left-[8%] top-[15%] h-[32rem] w-[32rem] rounded-full bg-[#2974ff]/[0.08] blur-[90px]" />
       <div className="pointer-events-none absolute bottom-[10%] right-[8%] h-[28rem] w-[28rem] rounded-full bg-[#e3233f]/[0.09] blur-[80px]" />
@@ -25,7 +25,7 @@ export default function Closing() {
 
         <a
           href="mailto:access@vaxenglobal.com"
-          className="mt-12 inline-flex min-w-[14rem] items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-10 py-4 text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-white hover:text-[#06060B]"
+          className="mt-12 inline-flex min-w-[14rem] items-center justify-center rounded-full border border-white/20 bg-white/[0.08] px-10 py-4 text-[0.9rem] font-bold text-white transition-all duration-200 hover:bg-white hover:text-[#06091C]"
         >
           Request Access
         </a>

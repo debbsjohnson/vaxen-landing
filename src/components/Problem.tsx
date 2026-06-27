@@ -107,7 +107,7 @@ function ProviderDiagram() {
 
 export default function Problem() {
   return (
-    <section id="problem" className="bg-[#06060B] large-section relative overflow-hidden">
+    <section id="problem" className="bg-[#06091C] large-section relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-0 h-[700px] w-[700px] -translate-x-1/4 -translate-y-1/4 rounded-full"
              style={{ background: "radial-gradient(circle, rgba(41,116,255,0.09) 0%, transparent 60%)" }} />

@@ -52,13 +52,13 @@ export default function Approach() {
           ))}
 
           {/* CTA card — fills the 6th slot in the 3-col grid */}
-          <div className="flex flex-col items-center justify-center rounded-[1.5rem] bg-[#06060B] p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.18)] sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col items-center justify-center rounded-[1.5rem] bg-[#06091C] p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.18)] sm:col-span-2 lg:col-span-1">
             <p className="text-[1.1rem] font-bold leading-snug text-white">
               Built for operators who move capital at institutional scale.
             </p>
             <a
               href="mailto:access@vaxenglobal.com"
-              className="mt-6 inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-3 text-[0.88rem] font-bold text-white transition-all hover:bg-white hover:text-[#06060B]"
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-3 text-[0.88rem] font-bold text-white transition-all hover:bg-white hover:text-[#06091C]"
             >
               Request Access
             </a>

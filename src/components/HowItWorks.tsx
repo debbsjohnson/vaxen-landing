@@ -28,7 +28,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-[#06060B] py-16 sm:py-24">
+    <section id="how-it-works" className="bg-[#06091C] py-16 sm:py-24">
       <div className="mx-auto max-w-[1040px] px-6">
         <div className="text-center">
           <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/30">

@@ -79,7 +79,7 @@ function CorridorMap() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#06060B]">
+    <section className="relative overflow-hidden bg-[#06091C]">
       {/* Atmosphere */}
       <div className="pointer-events-none absolute -left-40 -top-40 h-[56rem] w-[56rem] rounded-full bg-[#2974ff]/[0.065] blur-[130px]" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-[42rem] w-[42rem] translate-x-1/3 rounded-full bg-[#7456c7]/[0.055] blur-[110px]" />
@@ -127,7 +127,7 @@ export default function Hero() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href="mailto:access@vaxenglobal.com"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[0.88rem] font-bold text-[#06060B] shadow-lg transition-all duration-200 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[0.88rem] font-bold text-[#06091C] shadow-lg transition-all duration-200 hover:bg-white/90"
                 >
                   Apply for Access
                 </a>

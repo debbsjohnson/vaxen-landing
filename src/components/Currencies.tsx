@@ -55,7 +55,7 @@ function Sparkline({ points, up }: { points: string; up: boolean }) {
 
 export default function Currencies() {
   return (
-    <section className="bg-[#06060B] py-20 lg:py-28">
+    <section className="bg-[#06091C] py-20 lg:py-28">
       {/* Atmosphere */}
       <div className="pointer-events-none absolute left-0 h-[32rem] w-[32rem] -translate-x-1/3 rounded-full bg-[#8b5cf6]/[0.055] blur-[100px]" />
 

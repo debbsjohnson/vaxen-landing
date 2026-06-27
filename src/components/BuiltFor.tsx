@@ -58,7 +58,7 @@ export default function BuiltFor() {
         </div>
 
         {/* Disclaimer — dark treatment for emphasis */}
-        <div className="mt-20 rounded-[1.5rem] bg-[#06060B] px-8 py-10 sm:px-12 sm:py-12 lg:px-16 lg:py-14">
+        <div className="mt-20 rounded-[1.5rem] bg-[#06091C] px-8 py-10 sm:px-12 sm:py-12 lg:px-16 lg:py-14">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12">
             <div className="shrink-0">
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.2em] text-white/40 mb-3">

@@ -45,7 +45,7 @@ function DotList({ items }: { items: string[] }) {
 
 function JurisdictionPanel() {
   return (
-    <div className="flex min-h-[22rem] flex-col justify-between rounded-[1rem] bg-[#06060B] p-7 lg:min-h-[30rem] lg:p-9">
+    <div className="flex min-h-[22rem] flex-col justify-between rounded-[1rem] bg-[#06091C] p-7 lg:min-h-[30rem] lg:p-9">
       <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-white/35">
         Supported Jurisdictions
       </p>
@@ -94,7 +94,7 @@ function JurisdictionPanel() {
 
 function SecurityPanel() {
   return (
-    <div className="flex min-h-[22rem] flex-col rounded-[1rem] bg-[#06060B] p-7 lg:min-h-[30rem] lg:p-9">
+    <div className="flex min-h-[22rem] flex-col rounded-[1rem] bg-[#06091C] p-7 lg:min-h-[30rem] lg:p-9">
       <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-white/35">
         Operational Framework
       </p>

@@ -21,7 +21,7 @@ const RATES = [
 
 export default function PlatformPreview() {
   return (
-    <section className="relative overflow-hidden bg-[#06060B] py-24 lg:py-36">
+    <section className="relative overflow-hidden bg-[#06091C] py-24 lg:py-36">
       {/* Atmosphere */}
       <div className="pointer-events-none absolute right-0 top-0 h-[44rem] w-[44rem] translate-x-1/3 -translate-y-1/4 rounded-full bg-[#2974ff]/[0.07] blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[36rem] w-[36rem] -translate-x-1/4 translate-y-1/4 rounded-full bg-[#7456c7]/[0.06] blur-[120px]" />
@@ -55,12 +55,12 @@ export default function PlatformPreview() {
         <div
           className="overflow-hidden rounded-[1.4rem] border border-white/[0.07]"
           style={{
-            background: "linear-gradient(160deg, #0d0d1a 0%, #08080f 100%)",
+            background: "linear-gradient(160deg, #0d1128 0%, #08091e 100%)",
             boxShadow: "0 60px 160px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
           {/* Mock navigation bar */}
-          <div className="flex items-center gap-2 border-b border-white/[0.06] bg-[#0E0E18] px-5 py-3.5">
+          <div className="flex items-center gap-2 border-b border-white/[0.06] bg-[#0e1228] px-5 py-3.5">
             {/* Window controls (decorative) */}
             <div className="mr-3 flex items-center gap-1.5">
               <div className="h-2.5 w-2.5 rounded-full bg-white/10" />
@@ -230,7 +230,7 @@ export default function PlatformPreview() {
           </div>
 
           {/* Status bar */}
-          <div className="flex items-center justify-between border-t border-white/[0.04] bg-[#0E0E18]/60 px-8 py-2.5">
+          <div className="flex items-center justify-between border-t border-white/[0.04] bg-[#0e1228]/60 px-8 py-2.5">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1.5">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" style={{ animation: "vaxen-pulse 2.5s ease-in-out infinite" }} />
