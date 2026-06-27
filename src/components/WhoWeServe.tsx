@@ -149,13 +149,25 @@ export default function WhoWeServe() {
             <h2 className="text-[1.75rem] font-bold leading-tight text-black lg:text-[2.1rem]">
               Security &amp; Operational Controls
             </h2>
-            <div className="mt-10">
-              <p className="text-[1rem] font-semibold text-black">Vaxen Global Supports</p>
-              <DotList items={controls} />
-            </div>
-            <p className="mt-10 text-[1rem] font-medium leading-[1.65] text-black/80">
-              Operational discipline is foundational.
+            <p className="mt-6 max-w-[480px] text-[1rem] font-medium leading-[1.65] text-black/70">
+              Every transaction operates within a structured framework of controls — ensuring oversight, auditability, and integrity at scale.
             </p>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              {[
+                { value: "100%", label: "Application-reviewed access" },
+                { value: "Full", label: "Audit trail on every transaction" },
+                { value: "All", label: "Activity within structured controls" },
+                { value: "Zero", label: "Unmonitored transaction paths" },
+              ].map((item) => (
+                <div key={item.label} className="rounded-[1rem] border border-black/[0.06] bg-black/[0.03] p-4">
+                  <p className="text-[1.6rem] font-bold leading-none text-black"
+                     style={{ fontFamily: "var(--font-orbitron)" }}>
+                    {item.value}
+                  </p>
+                  <p className="mt-2 text-[0.78rem] font-medium leading-snug text-black/50">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

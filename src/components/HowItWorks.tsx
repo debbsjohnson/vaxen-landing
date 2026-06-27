@@ -34,14 +34,16 @@ import Image from "next/image";
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="page-shell py-16 sm:py-24">
+    <section id="how-it-works" className="bg-[#06060B] py-16 sm:py-24">
       <div className="mx-auto max-w-[1040px] px-6">
-        <h2
-          className="section-title text-center text-black"
-          style={{ fontSize: "clamp(3.2rem, 5vw, 4.4rem)" }}
-        >
-          How It Works
-        </h2>
+        <div className="text-center">
+          <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/30">
+            The Process
+          </p>
+          <h2 className="section-title text-white">
+            How It Works
+          </h2>
+        </div>
 
         {/* Mobile: simple vertical stack */}
         <div className="md:hidden mt-10 flex flex-col gap-5">
