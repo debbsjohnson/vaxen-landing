@@ -132,12 +132,12 @@ export default function WhoWeServe() {
               Designed for Institutional Cross-Border Operators
             </h2>
             <div className="mt-10">
-              <p className="text-[1rem] font-semibold text-black">Vaxen Global Supports</p>
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-black/35">Operators we work with</p>
               <DotList items={clients} />
             </div>
-            <p className="mt-10 max-w-[650px] text-[1rem] font-medium leading-[1.65] text-black/80">
-              Our focus is on professional operators transacting at scale across
-              multiple jurisdictions.
+            <p className="mt-10 max-w-[580px] text-[1rem] font-medium leading-[1.65] text-black/60">
+              Vaxen Global is not a general payment service. Access is restricted
+              to institutional operators with significant recurring cross-border volume.
             </p>
           </div>
           <JurisdictionPanel />

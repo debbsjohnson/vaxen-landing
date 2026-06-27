@@ -1,30 +1,8 @@
-import Image from "next/image";
-
 const capabilities = [
-  {
-    icon: "/assets/icon-transfer.svg",
-    iconSize: 42,
-    title: "Execute",
-    body: "High-value international transactions",
-  },
-  {
-    icon: "/assets/icon-coin.svg",
-    iconSize: 38,
-    title: "Manage",
-    body: "Recurring multi-currency exposure",
-  },
-  {
-    icon: "/assets/icon-execute.svg",
-    iconSize: 34,
-    title: "Precision",
-    body: "Exact timing and execution quality on every conversion",
-  },
-  {
-    icon: "/assets/icon-banking.svg",
-    iconSize: 42,
-    title: "Operate",
-    body: "Across multiple financial jurisdictions",
-  },
+  { title: "Execute",   body: "High-value international transactions" },
+  { title: "Manage",   body: "Recurring multi-currency exposure" },
+  { title: "Precision",body: "Exact timing and execution quality on every conversion" },
+  { title: "Operate",  body: "Across multiple financial jurisdictions" },
 ];
 
 export default function BuiltFor() {
@@ -59,20 +37,14 @@ export default function BuiltFor() {
               We support businesses that:
             </p>
             <div className="relative grid gap-5 sm:grid-cols-2">
-              {capabilities.map((item) => (
+              {capabilities.map((item, i) => (
                 <article
                   key={item.title}
                   className="soft-card min-h-[13rem] rounded-[1.55rem] p-7"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-black/[0.05]">
-                    <Image
-                      src={item.icon}
-                      alt=""
-                      width={item.iconSize}
-                      height={item.iconSize}
-                      className="object-contain"
-                    />
-                  </div>
+                  <p className="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-black/25">
+                    0{i + 1}
+                  </p>
                   <h3 className="text-[1.55rem] font-bold leading-none text-black">
                     {item.title}
                   </h3>

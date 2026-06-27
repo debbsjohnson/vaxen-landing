@@ -1,36 +1,30 @@
 const steps = [
   {
     number: "1",
-    icon: "/assets/icon-banking.svg",
     title: "Treasury Structuring",
     body: "We configure a multi-currency treasury environment aligned to your cross-border transaction profile.",
     className: "left-0 top-[1.25rem]",
   },
   {
     number: "2",
-    icon: "/assets/icon-coin.svg",
     title: "Balance Consolidation",
     body: "Maintain controlled exposure across USD, GBP, EUR, and BRL within a unified structure.",
     className: "left-[26rem] top-[9.5rem]",
   },
   {
     number: "3",
-    icon: "/assets/icon-transfer.svg",
     title: "Precision Conversion & Settlement",
     body: "Execute high-value currency conversion and settlement with attention to timing, liquidity, and execution quality.",
     className: "left-0 top-[20.5rem]",
   },
   {
     number: "4",
-    icon: "/assets/icon-money.svg",
     title: "Capital Deployment",
     body: "Transfer funds for acquisitions, capital allocation, or operational requirements with structured oversight and transparency.",
     extra: "All activity operates within a controlled, auditable framework designed for capital-intensive organisations.",
     className: "left-[26rem] top-[33rem]",
   },
 ];
-
-import Image from "next/image";
 
 export default function HowItWorks() {
   return (
@@ -53,8 +47,8 @@ export default function HowItWorks() {
               className="soft-card rounded-[1rem] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.055)]"
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-black/[0.05]">
-                  <Image src={step.icon} alt="" width={28} height={28} className="object-contain" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-black/[0.05]">
+                  <span className="text-[0.7rem] font-bold text-black/40" style={{ fontFamily: "var(--font-orbitron)" }}>0{step.number}</span>
                 </div>
                 <div className="pt-0.5">
                   <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-black/30 mb-1">Step {step.number}</p>
@@ -107,8 +101,8 @@ export default function HowItWorks() {
                 style={{ background: "white" }}
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.08)] border border-black/[0.05]">
-                    <Image src={step.icon} alt="" width={32} height={32} className="object-contain" />
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-black/[0.07] bg-black/[0.03]">
+                    <span className="text-[0.72rem] font-bold text-black/35" style={{ fontFamily: "var(--font-orbitron)" }}>0{step.number}</span>
                   </div>
                   <div className="pt-0.5">
                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.15em] text-black/30 mb-1">Step {step.number}</p>

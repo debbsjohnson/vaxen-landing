@@ -1,36 +1,9 @@
-import Image from "next/image";
-
 const capabilities = [
-  {
-    icon: "/assets/icon-coin.svg",
-    iconSize: 40,
-    title: "Multi-Currency Balance Management",
-    body: "Maintain controlled balances across USD, GBP, EUR, and BRL within a unified treasury environment.",
-  },
-  {
-    icon: "/assets/icon-banking.svg",
-    iconSize: 42,
-    title: "Consolidated Treasury Visibility",
-    body: "Single-framework oversight across all holdings and exposure — no fragmented views, no blind spots.",
-  },
-  {
-    icon: "/assets/icon-transfer.svg",
-    iconSize: 42,
-    title: "Precision Currency Conversion",
-    body: "Execute conversions at scale, with attention to timing, liquidity, and execution quality.",
-  },
-  {
-    icon: "/assets/icon-money.svg",
-    iconSize: 46,
-    title: "Structured Settlement Access",
-    body: "Access high-value settlement with institutional-grade structure across supported jurisdictions.",
-  },
-  {
-    icon: "/assets/icon-manage.svg",
-    iconSize: 36,
-    title: "Reporting & Transaction Oversight",
-    body: "Maintain clear, auditable records with structured operational reporting on every transaction.",
-  },
+  { title: "Multi-Currency Balance Management",  body: "Maintain controlled balances across USD, GBP, EUR, and BRL within a unified treasury environment." },
+  { title: "Consolidated Treasury Visibility",   body: "Single-framework oversight across all holdings and exposure — no fragmented views, no blind spots." },
+  { title: "Precision Currency Conversion",      body: "Execute conversions at scale, with attention to timing, liquidity, and execution quality." },
+  { title: "Structured Settlement Access",       body: "Access high-value settlement with institutional-grade structure across supported jurisdictions." },
+  { title: "Reporting & Transaction Oversight",  body: "Maintain clear, auditable records with structured operational reporting on every transaction." },
 ];
 
 
@@ -45,30 +18,30 @@ export default function Approach() {
       </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
         {/* Header */}
-        <div className="text-center">
-          <h4 className="section-title text-black">The Vaxen Approach</h4>
-          <p className="mx-auto mt-8 max-w-[600px] text-[1.05rem] font-medium leading-[1.65] text-black/80">
+        <div className="mb-16 max-w-[620px]">
+          <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-black/35">
+            Capabilities
+          </p>
+          <h2 className="section-title text-black">
+            Everything required.
+            <br />
+            Nothing redundant.
+          </h2>
+          <p className="mt-6 text-[1.05rem] font-medium leading-[1.65] text-black/70">
             One treasury structure. Precision execution. Controlled deployment.
           </p>
         </div>
 
         {/* Capability cards */}
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map((cap) => (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((cap, i) => (
             <div
               key={cap.title}
               className="soft-card rounded-[1.5rem] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.045)] transition-shadow hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)]"
             >
-              {/* Icon disc */}
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-black/[0.05]">
-                <Image
-                  src={cap.icon}
-                  alt=""
-                  width={cap.iconSize}
-                  height={cap.iconSize}
-                  className="object-contain"
-                />
-              </div>
+              <p className="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-black/25">
+                0{i + 1}
+              </p>
               <h3 className="text-[1.05rem] font-bold leading-snug text-black">
                 {cap.title}
               </h3>

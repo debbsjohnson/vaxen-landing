@@ -107,7 +107,7 @@ function ProviderDiagram() {
 
 export default function Problem() {
   return (
-    <section id="problem" className="page-shell large-section relative overflow-hidden">
+    <section id="problem" className="bg-[#06060B] large-section relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-0 h-[700px] w-[700px] -translate-x-1/4 -translate-y-1/4 rounded-full"
              style={{ background: "radial-gradient(circle, rgba(41,116,255,0.09) 0%, transparent 60%)" }} />
@@ -115,13 +115,13 @@ export default function Problem() {
              style={{ background: "radial-gradient(circle, rgba(116,86,199,0.09) 0%, transparent 60%)" }} />
       </div>
       <div className="mx-auto max-w-[1390px] px-6 lg:px-10">
-        <div className="mx-auto mb-28 max-w-[760px] text-center">
-          <h2 className="section-title text-black">The Problem</h2>
-          <p className="mt-8 text-[1.05rem] font-medium leading-[1.65] text-black/80">
-            Cross-border capital execution demands control.
-            <br />
-            Organisations operating internationally face:
-          </p>
+        <div className="mx-auto mb-20 max-w-[760px] text-center">
+          <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white/30">The Problem</p>
+          <h2 className="section-title text-white">
+            Structural friction on every
+            <br className="hidden sm:block" />
+            cross-border transaction.
+          </h2>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">
